@@ -6,6 +6,7 @@ const TicTacToe = () => {
   const [isXNext, setIsXNext] = useState(true);
 
   const handleClick = (index) => {
+    if (index < 0 || index > 8) return;
     if (board[index] || calculateWinner(board)) return;
 
     const newBoard = [...board];
